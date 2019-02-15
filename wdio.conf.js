@@ -1,4 +1,11 @@
-const CustomService = require('./custom-service');
+class CustomService {
+    onPrepare() {
+        console.log('=== onPrepare hook ===');
+    }
+    onComplete() {
+        console.log('=== onComplete hook ===');
+    }
+}
 
 exports.config = {
     runner: 'local',
@@ -16,7 +23,7 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
-    services: ['selenium-standalone', [CustomService]],
+    services: ['selenium-standalone', [CustomService, {}]],
     framework: 'jasmine',
     reporters: ['dot','spec'],
     jasmineNodeOpts: {
