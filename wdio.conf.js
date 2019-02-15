@@ -16,7 +16,7 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
-    services: ['selenium-standalone', CustomService],
+    services: ['selenium-standalone', [CustomService]],
     framework: 'jasmine',
     reporters: ['dot','spec'],
     jasmineNodeOpts: {
